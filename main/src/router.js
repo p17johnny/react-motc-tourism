@@ -7,7 +7,7 @@ import "./style.css";
 
 const routes = [
   {
-    path: "/test",
+    path: "/home",
     Component: lazy(() => import("./pages/home")),
     exact: true,
   },
@@ -39,13 +39,13 @@ const Router = ({ history }) => {
                     node.addEventListener("transitionend", done, false)
                   }
                   classNames="fade"
-                  timeout={500}
+                  timeout={1000}
                 >
                   <Switch location={location}>
                     <Route
                       exact
                       path="/"
-                      render={() => <Redirect to="/test" />}
+                      render={() => <Redirect to="/home" />}
                     />
                     {routes.map(({ path, Component, exact }) => (
                       <Route
@@ -62,7 +62,7 @@ const Router = ({ history }) => {
                         }}
                       />
                     ))}
-                    <Redirect to="/scenicSpot/testing" />
+                    <Redirect to="/home" />
                   </Switch>
                 </CSSTransition>
               </SwitchTransition>

@@ -4,13 +4,13 @@ import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
-import { createBrowserHistory } from "history";
+import { createBrowserHistory, createHashHistory } from "history";
 import { routerMiddleware } from "connected-react-router";
 import reducers from "./redux/reducers";
 import Router from "./router";
 import "./global.scss";
 
-const history = createBrowserHistory();
+const history = createHashHistory();
 const routeMiddleware = routerMiddleware(history);
 
 const store = createStore(
