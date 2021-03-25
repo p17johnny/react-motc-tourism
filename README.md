@@ -108,8 +108,12 @@
 *   react-redux、redux、redux-thunk
     *    redux＋本人習慣一次安裝 儲存全域變數
 
-<h4 id="modules_usage">程式解析</h4>
+<h4 id="modules_usage">程式內容</h4>
 
+ -  由於從ptx取得的ScenicSpot物件平稱相同，利用`src/components/attraction`呈現景點的圖片、類別、名稱、詳細資訊讓allspot,city共用，增加程式碼重用性，
+ -  設計`src/pages/layout` 加入 `components/footer` 與 `components/menu` 讓全部介面都擁有一樣的footer,menu，且不必每個地方都寫。若有不需要這兩樣的則增加router url前輟並利用它判斷要呈現的layout（於`src/rouer`）增加，並於 layout 中設計function讀取router或windows.location回傳想要顯示的layout形式。
+ -  不直接使用Modal包資料而是選擇額外寫一份 `src/components/details` 是為了讓allspot與city點下景點後呈現的內容相同，也更容易一次改變兩種。
+ 
 ---
 
 
@@ -133,4 +137,4 @@
 
 <h3 id="homework_detail">作業內容</h3>
 
-    [連結到作業內容(Markdown)](https://github.com/p17johnny/react-motc-tourism/blob/main/HWdetails.md)
+[連結到作業內容(Markdown)](https://github.com/p17johnny/react-motc-tourism/blob/main/HWdetails.md)
