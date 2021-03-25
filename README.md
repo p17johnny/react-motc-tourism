@@ -100,7 +100,7 @@
 *   jssha
     *   PTX Headers加密需求
 *   node-sass
-    *   安裝來使用module.scss自定義
+    *   安裝來使用module.scss自定義
 *   react-infinite-scroller
     *   偵測畫面滾動狀態，到底時呼叫function
 *   react-transition-group
