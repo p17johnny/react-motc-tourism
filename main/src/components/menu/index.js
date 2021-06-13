@@ -211,6 +211,13 @@ const MenuTop = () => {
               </Menu.ItemGroup>
             </SubMenu>
           </SubMenu>
+          <Menu.Item key="2">
+            {/* {icon && <span className={`${icon} ${style.icon}`} />} */}
+            <span className={style.title} onClick={() => history.push("/map")}>
+              地圖檢視
+            </span>
+            {/* {count && <span className="badge badge-success ml-2">{count}</span>} */}
+          </Menu.Item>
         </Menu>
       </div>
     </div>

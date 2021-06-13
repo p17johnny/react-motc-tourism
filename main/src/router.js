@@ -21,6 +21,11 @@ const routes = [
     Component: lazy(() => import("./pages/city")),
     exact: true,
   },
+  {
+    path: "/map",
+    Component: lazy(() => import("./pages/maps")),
+    exact: true,
+  },
 ];
 
 const Router = ({ history }) => {

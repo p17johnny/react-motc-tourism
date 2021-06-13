@@ -31,3 +31,20 @@ export const loadCity = (city, skip) => (dispatch) => {
       console.log(err);
     });
 };
+
+export const loadMap = () => (dispatch) => {
+  return axios
+    .get(
+      `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?$select=ID%2CName%2CPosition%2CAddress%2CTravelInfo%2COpenTime&$format=JSON`,
+      {
+        headers: getPTXauth(),
+      }
+    )
+    .then((res) => {
+      dispatch({ type: "SET_MAP", payload: res.data });
+      return res;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};

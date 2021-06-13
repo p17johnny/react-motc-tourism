@@ -10,7 +10,7 @@ import reducers from "./redux/reducers";
 import Router from "./router";
 import "./global.scss";
 
-const history = createHashHistory();
+const history = createBrowserHistory();
 const routeMiddleware = routerMiddleware(history);
 
 const store = createStore(

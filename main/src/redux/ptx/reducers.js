@@ -20,6 +20,9 @@ const ptxReducer = (state = initialState, action) => {
     //     city: action.payload,
     //   };
     //   return data;
+    case "SET_MAP":
+      return action.payload;
+
     case "SET_ATTR":
       return action.payload;
     default:
