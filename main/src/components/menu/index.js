@@ -27,14 +27,9 @@ const MenuTop = () => {
       </div>
       <div className={`${style.navigation} mr-5 d-xl-block d-none`}>
         <Menu mode="horizontal" subMenuCloseDelay={0.05}>
-          <Menu.Item key="0">
+          <Menu.Item key="0" onClick={() => history.push("/scenicSpot")}>
             {/* {icon && <span className={`${icon} ${style.icon}`} />} */}
-            <span
-              className={style.title}
-              onClick={() => history.push("/scenicSpot")}
-            >
-              全臺景點
-            </span>
+            <span className={style.title}>全臺景點</span>
             {/* {count && <span className="badge badge-success ml-2">{count}</span>} */}
           </Menu.Item>
           <SubMenu
@@ -211,11 +206,9 @@ const MenuTop = () => {
               </Menu.ItemGroup>
             </SubMenu>
           </SubMenu>
-          <Menu.Item key="2">
+          <Menu.Item key="2" onClick={() => history.push("/map")}>
             {/* {icon && <span className={`${icon} ${style.icon}`} />} */}
-            <span className={style.title} onClick={() => history.push("/map")}>
-              地圖檢視
-            </span>
+            <span className={style.title}>地圖檢視</span>
             {/* {count && <span className="badge badge-success ml-2">{count}</span>} */}
           </Menu.Item>
         </Menu>

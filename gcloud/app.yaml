@@ -1,6 +1,7 @@
 
 env: standard    
-runtime: nodejs12
+runtime: nodejs10
+service: default
 
 handlers:
 

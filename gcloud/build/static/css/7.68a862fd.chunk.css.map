@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/components/attraction/style.module.scss"],"names":[],"mappings":"AAEA,mBACE,qBAAsB,CACtB,uBAAkC,CAClC,yBAA0B","file":"7.68a862fd.chunk.css","sourcesContent":["@import '../mixins.scss';\n\n.head {\n  background-size: cover;\n  background-position: center center;\n  border-radius: 5px 5px 0 0;\n}\n"]}

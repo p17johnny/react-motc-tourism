@@ -11,6 +11,7 @@ import { loadMap } from "../../redux/ptx/actions";
 import Paragraph from "antd/lib/typography/Paragraph";
 import Text from "antd/lib/typography/Text";
 import { CloseOutlined } from "@ant-design/icons";
+import axios from "axios";
 
 const Map = ReactMapboxGl({
   minZoom: 8,
@@ -156,8 +157,24 @@ const MapPage = () => {
     </Marker>
   );
 
+  // const getposition = () => {
+  //   if (navigator) {
+  //     navigator.geolocation.getCurrentPosition(function (position) {
+  //       // console.log(position.coords.latitude);
+  //       axios
+  //         .get(
+  //           `https://maps.google.com/maps/api/geocode/json?latlng=${position.coords.latitude},${position.coords.longitude}&language=zh-TW&sensor=true&key=AIzaSyCRj-EcAKxO9-Wb_-zn8aQ2d0RMTXbOw4Q`
+  //         )
+  //         .then((res) => {
+  //           console.log(res);
+  //         });
+  //     });
+  //   }
+  // };
+
   return (
     <div>
+      {/* <Button onClick={check}>get position</Button> */}
       {data.length > 2 ? (
         <Map
           style="mapbox://styles/p17johnny/ckch5h95z1ra21jmhwxkwt7u7"

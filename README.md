@@ -17,6 +17,8 @@
 
 地區分類分為北部、中部、南部、東部、離島地區，顯示該地區的活動資訊（名稱、圖片、詳細資訊）。
 
+地圖檢視部分則利用mapbox呈現並基於MOTC data中的經緯度列出所有地點的地理位置，點擊即可查詢交通參考資料、開放時間與googlemaps導航位置
+
 ---
 
 <h3 id="description">架構說明</h3>
@@ -55,6 +57,7 @@
     │   │   │   ├── index.js
     │   │   │   └── style.module.scss
     │   │   └── mixins.scss
+    │   ├── images                      // 圖片component
     │   ├── global.scss                 // 通用style
     │   ├── index.js
     │   ├── pages
@@ -68,6 +71,8 @@
     │   │   │   ├── index.js
     │   │   │   └── style.module.scss
     │   │   ├── layout                  // 呈現樣板（router內的child都在這裡顯示）
+    │   │   │   └── index.js
+    │   │   ├── maps                    // 地圖檢視（mapbox-gl + react-mapbox-gl）
     │   │   │   └── index.js
     │   │   └── mixins.scss
     │   ├── redux                       // redux(reducres只儲存詳細資料，請見＊說明＊)
@@ -107,12 +112,15 @@
     *   切頁動畫
 *   react-redux、redux、redux-thunk
     *    redux＋本人習慣一次安裝 儲存全域變數
+*   mapbox-gl、react-mapbox-gl
+    *    mapbox plugins
 
 <h4 id="modules_usage">程式內容</h4>
 
  -  由於從ptx取得的ScenicSpot物件平稱相同，利用`src/components/attraction`呈現景點的圖片、類別、名稱、詳細資訊讓allspot,city共用，增加程式碼重用性，
  -  設計`src/pages/layout` 加入 `components/footer` 與 `components/menu` 讓全部介面都擁有一樣的footer,menu，且不必每個地方都寫。若有不需要這兩樣的則增加router url前輟並利用它判斷要呈現的layout（於`src/rouer`）增加，並於 layout 中設計function讀取router或windows.location回傳想要顯示的layout形式。
  -  不直接使用Modal包資料而是選擇額外寫一份 `src/components/details` 是為了讓allspot與city點下景點後呈現的內容相同，也更容易一次改變兩種。
+ -  react-mapbox-gl 的v5版本出現問題，故選擇該package v4版本中最穩定的v4.8.6，並且因為mapbox-gl v2將影響舊版瀏覽器的轉譯故選擇使用mapbox-gl v1.11.1呈現地圖介面。
  
 ---
 
@@ -137,6 +145,6 @@
 
 ---
 
-<h3 id="homework_detail">作業內容</h3>
+<h3 id="homework_detail">Dcard 作業內容</h3>
 
 [連結到作業內容(Markdown)](https://github.com/p17johnny/react-motc-tourism/blob/main/HWdetails.md)
